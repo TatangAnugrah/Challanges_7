@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/near_black"
+    tools:context=".fragments.HomeScreenFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/iv_nav">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_highlight"
+                android:layout_width="match_parent"
+                android:layout_height="467dp"
+                tools:listitem="@layout/highlight_rv"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/sv_search" />
+
+            <ImageView
+                android:id="@+id/iv_gradasi_orange"
+                android:layout_width="373dp"
+                android:layout_height="332dp"
+                android:layout_marginEnd="-10dp"
+                android:src="@drawable/gd_biru_atas"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/ic_profil"
+                android:src="@drawable/ic_profil"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="48dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <TextView
+                android:id="@+id/tv_menyapa_nama"
+                android:text="Halo, Rizqi Fakhri"
+                android:textColor="@color/white"
+                android:fontFamily="@font/poppins_bold"
+                android:layout_marginStart="14dp"
+                android:textSize="18sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toEndOf="@id/ic_profil"
+                app:layout_constraintTop_toTopOf="@id/ic_profil"
+                app:layout_constraintBottom_toTopOf="@id/tv_desc"/>
+
+            <TextView
+                android:id="@+id/tv_desc"
+                android:text="Mau nonton apa hari ini?"
+                android:textColor="@color/white"
+                android:fontFamily="@font/poppins_regular"
+                android:layout_marginStart="14dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toEndOf="@id/ic_profil"
+                app:layout_constraintTop_toBottomOf="@id/tv_menyapa_nama"
+                app:layout_constraintBottom_toBottomOf="@id/ic_profil"/>
+
+            <ImageButton
+                android:id="@+id/ib_menu"
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:backgroundTint="@color/transparant"
+                android:src="@drawable/ic_menu"
+                app:layout_constraintTop_toTopOf="@id/ic_profil"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <SearchView
+                android:id="@+id/sv_search"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/round"
+                android:queryHint="Mau cari film apa?"
+                android:iconifiedByDefault="false"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="14dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_desc"/>
+
+            <TextView
+                android:id="@+id/tv_section_upcoming"
+                android:text="Upcoming"
+                android:textColor="@color/white"
+                android:textSize="24dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginStart="16dp"
+                android:fontFamily="@font/montserrat_bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/rv_highlight"/>
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_populer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="60dp"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_section_upcoming"
+                tools:listitem="@layout/upcoming_rv" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+    <ImageView
+        android:id="@+id/iv_nav"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <ImageView
+        android:id="@+id/iv_middle"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:src="@drawable/ic_movie"
+        app:layout_constraintBottom_toTopOf="@id/iv_nav"
+        app:layout_constraintEnd_toStartOf="@id/iv_profil"
+        app:layout_constraintStart_toEndOf="@id/iv_home"
+        app:layout_constraintTop_toTopOf="@id/iv_nav" />
+
+    <ImageView
+        android:id="@+id/iv_home"
+        android:src="@drawable/ic_home"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/iv_nav"
+        app:layout_constraintTop_toTopOf="@id/iv_nav"
+        app:layout_constraintBottom_toBottomOf="@id/iv_nav"
+        app:layout_constraintEnd_toStartOf="@id/iv_middle"/>
+
+    <ImageView
+        android:id="@+id/iv_profil"
+        android:src="@drawable/ic_user_profil"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/iv_middle"
+        app:layout_constraintEnd_toEndOf="@id/iv_nav"
+        app:layout_constraintTop_toTopOf="@id/iv_nav"
+        app:layout_constraintBottom_toBottomOf="@id/iv_nav"/>
+
+
+
+
+
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

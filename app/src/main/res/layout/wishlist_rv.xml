@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="14dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:background="@color/white"
+        android:id="@+id/section_poster"
+        android:layout_width="wrap_content"
+        android:layout_height="229dp"
+        android:layout_marginStart="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:cardCornerRadius="5dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/iv_poster"
+                android:scaleType="centerCrop"
+                android:layout_width="154dp"
+                android:layout_height="229dp"
+                android:src="@drawable/poster_blank_rev"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <ImageView
+                android:id="@+id/iv_container_rating"
+                android:layout_width="50dp"
+                android:layout_height="22dp"
+                android:layout_margin="8dp"
+                android:background="#72000000"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_rating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="100%"
+                android:textColor="@color/white"
+                android:textSize="10sp"
+                app:layout_constraintBottom_toBottomOf="@id/iv_container_rating"
+                app:layout_constraintEnd_toEndOf="@id/iv_container_rating"
+                app:layout_constraintStart_toEndOf="@id/iv_star"
+                app:layout_constraintTop_toTopOf="@id/iv_container_rating" />
+
+            <ImageView
+                android:id="@+id/iv_star"
+                android:layout_width="14dp"
+                android:layout_height="14dp"
+                android:src="@drawable/ic_star"
+                app:layout_constraintBottom_toBottomOf="@id/iv_container_rating"
+                app:layout_constraintEnd_toStartOf="@id/tv_rating"
+                app:layout_constraintStart_toStartOf="@id/iv_container_rating"
+                app:layout_constraintTop_toTopOf="@id/iv_container_rating" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+    <TextView
+        android:id="@+id/tv_judul"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="14dp"
+        android:fontFamily="@font/montserrat_bold"
+        android:text="Judul Film"
+        android:textColor="@color/white"
+        android:textSize="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.448"
+        app:layout_constraintStart_toEndOf="@id/section_poster"
+        app:layout_constraintTop_toTopOf="@id/section_poster" />
+
+    <TextView
+        android:id="@+id/tv_release"
+        android:text="17/12/2021"
+        android:fontFamily="@font/montserrat_regular"
+        android:textSize="20dp"
+        android:textColor="@color/white"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        app:layout_constraintStart_toStartOf="@id/tv_judul"
+        app:layout_constraintTop_toBottomOf="@id/tv_judul"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
